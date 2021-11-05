@@ -1,0 +1,25 @@
+header{
+    background-color: #88bb66;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: #77aa66, solid;
+    padding-left: 10px;
+    padding-right: 20px;  
+}
+
+
+body{
+    background-color: gainsboro;
+}
+
+td{
+  margin: 20px;
+  text-align: justify;
+}
+
+table{
+    background-color: honeydew;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 5%;
+    border: gray;
+    border-radius: 5px;
+}
