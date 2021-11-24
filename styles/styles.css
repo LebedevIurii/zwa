@@ -53,7 +53,7 @@ li{
     text-transform: uppercase;
     letter-spacing: 3px;
     color: #edd2cb;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     font-family: 'Montserrat Alternates', sans-serif;
 }
@@ -104,10 +104,8 @@ li{
 
 .choosen-link{
   letter-spacing: 1em;
-  color: #999;
+  color: #a445b2;
 }
-
-
 
 .post-block{
   background-color: #644d62;
@@ -119,13 +117,16 @@ li{
     justify-content: space-around;
 }
 
+.linked-post{
+  text-decoration: none;
+}
+
 .profile-content{
   display: grid;
   font-family: 'Poppins', sans-serif;
   height: 100%;
   width: 100%;
   padding: 5%;
-  padding-bottom: 15%;
   place-items: center;
   background: -webkit-linear-gradient(left, #a445b2, #644d62);
 }
@@ -133,6 +134,7 @@ li{
   background: #644d62;
   color: #fff;
 }
+
 .profile-field{
   overflow: hidden;
   max-width: 390px;
@@ -141,10 +143,96 @@ li{
   border-radius: 5px;
   box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
 }
+
+.user-field{
+  overflow: hidden;
+  max-width: 400px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+
+.post-field{
+  overflow: hidden;
+  max-width: 35%;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+  color: #361d32;
+  font-size: large;
+  margin: 2em;
+}
+
+.add-post-field{
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  width: 60%;
+  height: 60%;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+  color: #361d32;
+  font-size: large;
+  margin: 2em;
+}
+
+.profile{
+  width: 100%;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+  margin-bottom: 0.5em;
+}
+
+.avatar-image{
+  display: flex;
+  justify-content: center;
+}
+
+.avatar-image img{
+  width: 50%;
+}
+
+.manual{
+  font-weight: 800;
+}
+
+.contact, .name{
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.contact a{
+  text-decoration: none;
+  color: #a445b2;
+  font-weight: 800;
+}
+
+.history-links{
+  display: flex;
+  justify-content: space-around;
+}
+
+.history-links li{
+  margin-top: 0.5rem;
+}
+
+.history-links a{
+  text-decoration: none;
+  color: #a445b2;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: bold;
+}
+
 .profile-field .title-text{
   display: flex;
   width: 200%;
 }
+
 .profile-field .title{
   width: 50%;
   font-size: 35px;
@@ -256,7 +344,7 @@ form .field input:focus::placeholder{
   margin-top: 30px;
 }
 .form-inner form .pass-link a,
-.form-inner form .signup-link a{
+.form-inner form .signup-link a, .name a{
   color: #644d62;
   text-decoration: none;
 }
@@ -264,12 +352,13 @@ form .field input:focus::placeholder{
 .form-inner form .signup-link a:hover{
   text-decoration: underline;
 }
-form .btn{
+.form-inner form .btn{
   height: 50px;
   width: 100%;
   border-radius: 5px;
   position: relative;
   overflow: hidden;
+  margin-top: 20%;
 }
 form .btn .btn-layer{
   height: 100%;
@@ -299,12 +388,12 @@ form .btn input[type="submit"]{
 }
 
 .post{
-    width: 30%;
-    border-radius: 10px;   
-    color: #f1e8e6;
-    background-color: #361d32;
-    margin: 1%;
-    padding: 2%;
+  width: 90%;
+  border-radius: 10px;   
+  color: #f1e8e6;
+  background-color: #361d32;
+  margin: 2%;
+  padding: 1em;
 }
 
 .post-text{
@@ -316,7 +405,13 @@ form .btn input[type="submit"]{
 }
 
 .post img{
-  width: 70%;
+  width: 80%;
+  border-radius: 10px;
+}
+
+.post-img img{
+  width: 90%;
+  border-radius: 100px;
 }
 
 .post .img{
@@ -324,6 +419,7 @@ form .btn input[type="submit"]{
   justify-content: center;
   margin-bottom: 1em;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .block-name{
@@ -337,27 +433,60 @@ form .btn input[type="submit"]{
     margin: 2%;
 }
 
+
+.nickname{
+  color: #361d32;
+  font-weight: bolder;
+  font-size: larger;
+}
+
 .title-price{
-    font-size: 2em;
-    font-family: 'Montserrat Alternates', sans-serif;
-    color: #f1e8e6;
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #f1e8e6;
+}
+
+.post-part{
+  font-size: x-large;
+  color: #361d32;
 }
 
 .price{
-    display: flex;
-    letter-spacing: 2px;
-    color: #e28585;
+  display: flex;
+  letter-spacing: 2px;
+  color: #e28585;
 }
 
 .price span{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    letter-spacing: 2px;
-    font-size: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  letter-spacing: 2px;
 }
 
 .title-price span{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: medium;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.1em;
+}
+
+.field{
+  margin-bottom: 2em;
+}
+
+.field label{
+  font-size: small;
+  font-weight: bold;
+}
+
+.discription-field label{
+  display: block;
+}
+
+.discription-field textarea{
+  resize: none;
+  width: 100%;
+  height: 11em;
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
 }
 
 .footer-h a{
@@ -371,3 +500,4 @@ form .btn input[type="submit"]{
     justify-content: space-around;
     display: flex;
 }
+

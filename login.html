@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meow-itel</title>
+    <title>Meow-itel Login page</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
         <div class="header">
             <nav class="nav">
                 <div class="logo">
-                    <h4>Meow-itel</h4>
+                    <h1>Meow-itel</h1>
                 </div>
                 <div>
                     <ul class="nav-links">
@@ -31,15 +31,15 @@
         </div>
         <div class="profile-content">
             <div class="profile-field">
-                <div class="title-text">
+               <div class="title-text">
                     <div class="title login">
                        Login Form
                     </div>
                     <div class="title signup">
                        Signup Form
                     </div>
-                 </div>
-                 <div class="form-container">
+               </div>
+               <div class="form-container">
                     <div class="slide-controls">
                        <input type="radio" name="slide" id="login" checked>
                        <input type="radio" name="slide" id="signup">
@@ -50,10 +50,12 @@
                     <div class="form-inner">
                        <form action="#" class="login">
                           <div class="field">
-                             <input type="text" placeholder="Email Address" required>
+                             <label for="e-mail">E-mailová adresa</label>
+                             <input id="e-mail" type="text" placeholder="E-mailová adresa" required>
                           </div>
                           <div class="field">
-                             <input type="password" placeholder="Password" required>
+                             <label for="password">Heslo</label>
+                             <input id="password"  type="password" placeholder="Heslo" required>
                           </div>
                           <div class="pass-link">
                              <a href="#">Forgot password?</a>
@@ -67,19 +69,30 @@
                           </div>
                        </form>
                        <form action="#" class="signup">
-                          <div class="field">
-                             <input type="text" placeholder="Email Address" required>
-                          </div>
-                          <div class="field">
-                             <input type="password" placeholder="Password" required>
-                          </div>
-                          <div class="field">
-                             <input type="password" placeholder="Confirm password" required>
-                          </div>
-                          <div class="field btn">
+                           <div class="field">
+                             <label for="e-mail">E-mailová adresa*</label>
+                             <input id="e-mail" type="email" placeholder="E-mailová adresa" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                           </div>
+                           <div class="field">
+                              <label for="name">Jmeno*</label>
+                              <input id="name"  type="text" placeholder="Jmeno" maxlength="32" pattern="[A-Za-z]{1,32}" required>
+                           </div>
+                           <div class="field">
+                              <label for="phone-number">Telefonní čislo*</label>
+                              <input id="phone-number" type="tel" placeholder="Telefon" pattern="[0-9]*" required>
+                           </div>
+                           <div class="field">
+                              <label for="password">Heslo*</label>
+                              <input id="signup-password" type="password" placeholder="Heslo" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-])" required>
+                           </div>
+                           <div class="field">
+                              <label for="confirm-password">Podtvrdit heslo*</label>
+                              <input id="confirm-password"  onchange="compare()" type="password" placeholder="Podtvrdit heslo" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-])" required>
+                           </div>
+                           <div class="field btn">
                              <div class="btn-layer"></div>
                              <input type="submit" value="Signup">
-                          </div>
+                           </div>
                        </form>
                     </div>
                 </div>
