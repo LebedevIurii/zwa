@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meow-itel adding post</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <nav class="nav">
+                <div class="logo">
+                    <h1>Meow-itel</h1>
+                </div>
+                <div>
+                    <ul class="nav-links">
+                        <li class="add">
+                            <a href="add.html">Add Post</a>
+                        </li>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Themes</a>
+                        </li>
+                        <li>
+                            <a href="login.html">Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="content">
+            <div class="main">
+                <div class="add-post-field">
+                    <div class="form-inner">
+                        <form action="#" class="ad">
+                            <div class="field">
+                                <label for="ad-name">Název:*</label>
+                                <input type="text" name="title" id="ad-name" required>
+                            </div>
+                            <div class="field">
+                                <label for="ad-price">Cena:*</label>
+                                <input type="number" name="price" id="ad-price" required>
+                            </div>
+                            <div class="field">
+                                <label for="phone-number">Telefonní čislo:*</label>
+                                <input id="phone-number" type="tel" pattern="[0-9]*" required>
+                            </div>
+                            <div class="discription-field field">
+                                <label for="ad-discription">Popis:*</label>
+                                <textarea name="discription" id="ad-discription" cols="120" rows="1" required></textarea>
+                            </div>
+                            <div class="btn field">
+                                <div class="btn-layer"></div>
+                                <input type="submit" value="Zveřejnit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <footer class="footer-h"> 
+                <div>
+                    <p>Updated: 23.11.2021</p>
+                    <a href="https://github.com/LebedevIurii/zwa">Open source</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
