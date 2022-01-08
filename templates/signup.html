@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meow-itel Login page</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <nav class="nav">
+                <a href="index.html">
+                    <div class="logo">
+                        <h1>Meow-itel</h1>
+                    </div>
+                </a>
+                <div>
+                    <ul class="nav-links">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Themes</a>
+                        </li>
+                        <li>
+                            <a href="login.html">Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="profile-content">
+            <div class="profile-field">
+               <div class="title-text">
+                    <div class="title signup">
+                       Signup Form
+                    </div>
+               </div>
+               <div class="form-container">
+                    <div class="form-inner">
+                       <form action="#" class="signup">
+                            <div class="field">
+                             <label for="e-mail">E-mailová adresa*</label>
+                             <input id="e-mail" type="email" placeholder="E-mailová adresa" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                            </div>
+                            <div class="field">
+                              <label for="name">Jmeno*</label>
+                              <input id="name"  type="text" placeholder="Jmeno" maxlength="32" pattern="[A-Za-z]{1,32}" required>
+                            </div>
+                            <div class="field">
+                              <label for="phone-number">Telefonní čislo*</label>
+                              <input id="phone-number" type="tel" placeholder="Telefon" pattern="[0-9]*" required>
+                            </div>
+                            <div class="field">
+                              <label for="password">Heslo*</label>
+                              <input id="signup-password" type="password" placeholder="Heslo" pattern="[A-Za-z0-9]" required>
+                            </div>
+                            <div class="field">
+                              <label for="confirm-password">Podtvrdit heslo*</label>
+                              <input id="confirm-password"  onchange="compare()" type="password" placeholder="Podtvrdit heslo" pattern="[A-Za-z0-9]" required>
+                            </div>
+                            <div class="field btn">
+                             <div class="btn-layer"></div>
+                             <input type="submit" value="Signup">
+                            </div>
+                            <div>
+                                Máte již učet? <a href="login.html">Přihlásit se teď</a>
+                            </div>
+                       </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script/signup.js"></script>
+    </div>
+</body>
+</html>

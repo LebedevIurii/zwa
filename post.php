@@ -6,27 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meow-itel post page</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
     <div class="main-container">
         <div class="header">
             <nav class="nav">
-                <div class="logo">
-                    <h1>Meow-itel</h1>
-                </div>
+                <a href="index.php">
+                    <div class="logo">
+                        <h1>Meow-itel</h1>
+                    </div>
+                </a>
                 <div>
                     <ul class="nav-links">
                         <li class="add">
-                            <a href="add.html">Add Post</a>
+                            <a href="add.php">Add Post</a>
                         </li>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index.php">Home</a>
                         </li>
                         <li>
                             <a href="#">Themes</a>
                         </li>
                         <li>
-                            <a href="login.html">Profile</a>
+                            <a href="login.php">Profile</a>
                         </li>
                     </ul>
                 </div>
@@ -36,33 +39,9 @@
             <div class="main">
                 <div class="category-menu">
                     <ul class="category-links">
-                        <li>
-                            <a class="category-link" href="#">Auto</a>
-                        </li>
-                        <li>
-                            <a class="category-link" href="#">Animals</a>
-                        </li>
-                        <li>
-                            <a class="category-link" href="#">Home and Garden</a>
-                        </li>
-                        <li>
-                            <a class="category-link" href="category.html">Electronics</a>
-                        </li>
-                        <li>
-                            <a class="category-link" href="#">Business & Services</a>
-                        </li>
-                        <li>
-                            <a class="category-link" href="#">Fashion & Style</a>
-                        </li>
-                        <li>
-                            <a class="category-link" href="#">Baby items</a>
-                        </li>
-                        <li>
-                            <a class="category-link" href="#">Hobbies</a>
-                        </li>
-                        <li>
-                            <a class="category-link" href="#">Other</a>
-                        </li>
+                        <?php
+                            include 'categorymenu.php';
+                        ?>
                     </ul>
                 </div>
                 <div class="post-field">
@@ -87,17 +66,9 @@
                             Prodám plně funkční Canon 400D + příslušenství. 4x baterie (2x originální baterie Canon Li-ion , 2x neoriginální baterie), sluneční clona JJC lens hood for 60C, paměťová karta 2GB, objektiv EFS 18-55mm.
                         </div>
                         <div class="contact">
-                            <div class="phone-number">
-                                <span class="manual">
-                                    Kontakt:
-                                </span>
-                                <span>
-                                    143245987
-                                </span>
-                            </div>
                             <div class="name">
                                 <span class="manual">Jmeno:</span>
-                                <a href="profile.html">Louis Le Prince</a>
+                                <span class="manual"></span>
                             </div>
                         </div>
                     </div>
@@ -107,7 +78,6 @@
         <div class="footer">
             <footer class="footer-h"> 
                 <div>
-                    <p>Updated: 23.11.2021</p>
                     <a href="https://github.com/LebedevIurii/zwa">Open source</a>
                 </div>
             </footer>

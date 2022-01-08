@@ -49,6 +49,10 @@ li{
     list-style: none;
 }
 
+.nav a{
+  text-decoration: none;
+}
+
 .logo{
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -90,7 +94,7 @@ li{
   margin-left: 2em;
 }
 
-.category-link{
+.category-links a{
   text-decoration: none;
   color: #f1e8e6;
   font-size: 1.5em;
@@ -99,7 +103,7 @@ li{
 }
 
 .category-links li{
-    padding-bottom: 2em;
+  padding-bottom: 2em;
 }
 
 .choosen-link{
@@ -500,4 +504,3 @@ form .btn input[type="submit"]{
     justify-content: space-around;
     display: flex;
 }
-
