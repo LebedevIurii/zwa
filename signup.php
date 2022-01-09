@@ -51,7 +51,7 @@
                               <input id="name" name="login" type="text" placeholder="Jmeno" maxlength="32" pattern="[A-Za-z]{1,32}" value="<?php echo $login; ?>" required>
                             </div>
                             <div class="field">
-                              <label for="password">Heslo*</label>
+                              <label for="signup-password">Heslo*</label>
                               <input id="signup-password" name="password"  type="password" placeholder="Heslo" pattern="[A-Za-z0-9@.]{8,}" required>
                             </div>
                             <div class="field">
