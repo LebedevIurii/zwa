@@ -33,7 +33,8 @@
         {
             $db -> query("INSERT INTO `Users` (`login`, `password`, `email`) VALUES('$login', '$password', '$email')");
             $db -> close();
-
+            $_SESSION["user_name"] = $email;
+            $_SESSION["is_authorized"] = 1;
             echo '<meta http-equiv="refresh" content="0; URL= /~lebediur/index.php">';
         }
     } else{

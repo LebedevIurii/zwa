@@ -45,6 +45,7 @@
                              <label for="e-mail">E-mailová adresa*</label>
                              <input id="e-mail" name="email" type="email" placeholder="E-mailová adresa" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="<?php echo $email; ?>" required>
                             </div>
+                            <div class="red" id="txtHint"></div>
                             <div class="field">
                               <label for="name">Jmeno*</label>
                               <input id="name" name="login" type="text" placeholder="Jmeno" maxlength="32" pattern="[A-Za-z]{1,32}" value="<?php echo $login; ?>" required>

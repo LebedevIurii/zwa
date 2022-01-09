@@ -578,6 +578,12 @@ form .btn input[type="submit"]{
   margin: 0 0.5em;
 }
 
+.red{
+  color: red;
+  font-weight: 800;
+}
+
+
 @media print{
   .nav div, .footer-h, .category-menu, .paging, .post-img, .img{
     display: none !important;

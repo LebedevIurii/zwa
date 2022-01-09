@@ -42,20 +42,21 @@
                        <form action="login.php" class="login" method="post">
                             <div class="field">
                                <label for="email">E-mailová adresa</label>
-                               <input id="email" name="email" type="text" placeholder="E-mailová adresa" value="<?php echo $email; ?>" required>
+                               <input id="email" name="email" type="text" placeholder="E-mailová adresa" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="<?php echo $email; ?>" required>
                             </div>
                             <div class="field">
                                <label for="password">Heslo</label>
-                               <input id="password" name="password" type="password" placeholder="Heslo" pattern="[A-Za-z0-9@.]{8,}" required>
+                               <input id="password" name="password" type="password" placeholder="Heslo" pattern="[A-Za-z0-9]{8,}" required>
                             </div>
                             <?php
                                 if($error != null){
                                     echo "<span>$error</span></br>";
                                 }
                             ?>   
+                            <div id="msg" class="red"></div>
                             <div class="field btn">
                                <div class="btn-layer"></div>
-                               <input name="submit" type="submit" value="Login">
+                               <input name="submit" id="submit" type="submit" value="Login">
                             </div>
                             <div>
                                Ještě nemáte účet? <a href="signup.php">Zaregestrujte se teď</a>
@@ -66,5 +67,6 @@
             </div>
         </div>
     </div>
+    <script src="script/login.js"></script>
 </body>
 </html>

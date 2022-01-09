@@ -8,7 +8,10 @@
             $title = htmlspecialchars($_POST['title']);
             $category = filter_input(INPUT_POST, 'category', FILTER_SANITIZE_STRING);
             $target_dir = "imgs/";
-            $target_file = basename($_FILES['image']['name']);
+            $date = date_create();
+            $time = strval(date_timestamp_get($date));
+            $hash_file = hash("md5", $time);
+            $target_file = $hash_file . basename($_FILES['image']['name']);
             if ($target_file != null){
                 $uploadOk = 1;
                 $imageFileType = strtolower(pathinfo($target_dir. $target_file,PATHINFO_EXTENSION));
