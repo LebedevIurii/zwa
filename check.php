@@ -34,8 +34,11 @@
             $db -> query("INSERT INTO `Users` (`login`, `password`, `email`) VALUES('$login', '$password', '$email')");
             $db -> close();
 
-            header("Location: https://wa.toad.cz/~lebediur/profile.php");
+            echo '<meta http-equiv="refresh" content="0; URL= /~lebediur/index.php">';
         }
+    } else{
+        $email = "";
+        $login = "";
     }
 
 ?>

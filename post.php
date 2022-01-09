@@ -1,3 +1,7 @@
+<?php
+    include 'connectioncheck.php';
+
+?>
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -7,6 +11,7 @@
     <title>Meow-itel post page</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="icon" href="favicon.ico">
+    <script src="https://kit.fontawesome.com/205095dac4.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="main-container">
@@ -19,18 +24,28 @@
                 </a>
                 <div>
                     <ul class="nav-links">
-                        <li class="add">
-                            <a href="add.php">Add Post</a>
-                        </li>
+                        <?php
+                            if (isset($_SESSION["is_authorized"]) && ($_SESSION["is_authorized"] == 1)){
+                                echo '<li class="add">';
+                                echo '<a href="add.php">Add Post</a>';
+                                echo '</li>';
+                            }
+                        ?>
                         <li>
                             <a href="index.php">Home</a>
                         </li>
-                        <li>
-                            <a href="#">Themes</a>
-                        </li>
-                        <li>
-                            <a href="login.php">Profile</a>
-                        </li>
+                        <?php
+                            echo "<li>";
+                            if (isset($_SESSION["is_authorized"]) && $_SESSION["is_authorized"] == 1){
+                                echo "<a href='profile.php'>Profile</a>";
+                                echo "</li>";
+                                echo "<li>";
+                                echo "<a href='logout.php'>Log out</a>";
+                            } else {
+                                echo "<a href='login.php'>Log in</a>";
+                            }
+                            echo "</li>";
+                        ?>
                     </ul>
                 </div>
             </nav>
@@ -44,41 +59,16 @@
                         ?>
                     </ul>
                 </div>
-                <div class="post-field">
-                    <div class="title-price">
-                        <div class="post-part">
-                            Canon 400D + příslušenství
-                        </div>
-                        <div class="price post-part">
-                            <span>
-                                Cena:
-                            </span>
-                            <span>
-                                3000Kč
-                            </span>
-                        </div>
-                    </div>
-                    <div class="post-img">
-                        <img src="imgs/Canon400D.jpg" alt="Photo">
-                    </div>
-                    <div class="post-info">
-                        <div class="description">
-                            Prodám plně funkční Canon 400D + příslušenství. 4x baterie (2x originální baterie Canon Li-ion , 2x neoriginální baterie), sluneční clona JJC lens hood for 60C, paměťová karta 2GB, objektiv EFS 18-55mm.
-                        </div>
-                        <div class="contact">
-                            <div class="name">
-                                <span class="manual">Jmeno:</span>
-                                <span class="manual"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                    include 'post-information.php';
+                ?>
             </div>
         </div>
         <div class="footer">
             <footer class="footer-h"> 
                 <div>
-                    <a href="https://github.com/LebedevIurii/zwa">Open source</a>
+                    <a href="https://github.com/LebedevIurii/zwa" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-alt fa-2x"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fas fa-question-circle fa-2x"></i></a>
                 </div>
             </footer>
         </div>

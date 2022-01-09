@@ -34,11 +34,12 @@
                 <div class="title profile">
                     Uživatelcký profil
                 </div>
+                <div class="avatar-image">
                     <img src="imgs/user.png" alt="avatar">
                 </div>
                 <div class="profile-info">
                     <?php
-                        include 'profile-information.php'
+                    include 'profile-information.php'
                     ?>
                 </div>
             </div>

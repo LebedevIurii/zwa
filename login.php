@@ -42,11 +42,11 @@
                        <form action="login.php" class="login" method="post">
                             <div class="field">
                                <label for="email">E-mailová adresa</label>
-                               <input id="email" name="email" type="text" placeholder="E-mailová adresa" required>
+                               <input id="email" name="email" type="text" placeholder="E-mailová adresa" value="<?php echo $email; ?>" required>
                             </div>
                             <div class="field">
                                <label for="password">Heslo</label>
-                               <input id="password" name="password" type="password" placeholder="Heslo" required>
+                               <input id="password" name="password" type="password" placeholder="Heslo" pattern="[A-Za-z0-9@.]{8,}" required>
                             </div>
                             <?php
                                 if($error != null){

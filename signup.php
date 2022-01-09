@@ -43,19 +43,19 @@
                        <form action="signup.php" class="signup" method="post">
                             <div class="field">
                              <label for="e-mail">E-mailová adresa*</label>
-                             <input id="e-mail" name="email" type="email" placeholder="E-mailová adresa" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                             <input id="e-mail" name="email" type="email" placeholder="E-mailová adresa" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="<?php echo $email; ?>" required>
                             </div>
                             <div class="field">
                               <label for="name">Jmeno*</label>
-                              <input id="name" name="login" type="text" placeholder="Jmeno" maxlength="32" pattern="[A-Za-z]{1,32}" required>
+                              <input id="name" name="login" type="text" placeholder="Jmeno" maxlength="32" pattern="[A-Za-z]{1,32}" value="<?php echo $login; ?>" required>
                             </div>
                             <div class="field">
                               <label for="password">Heslo*</label>
-                              <input id="signup-password" name="password"  type="password" placeholder="Heslo" required>
+                              <input id="signup-password" name="password"  type="password" placeholder="Heslo" pattern="[A-Za-z0-9@.]{8,}" required>
                             </div>
                             <div class="field">
                               <label for="confirm-password">Podtvrdit heslo*</label>
-                              <input id="confirm-password" name="confirm-password" onchange="compare()" type="password" placeholder="Podtvrdit heslo" required>
+                              <input id="confirm-password" name="confirm-password" onchange="compare()" type="password" placeholder="Podtvrdit heslo" pattern="[A-Za-z0-9@.]{8,}" required>
                             </div>
                             <?php
                                 foreach($err AS $error){
