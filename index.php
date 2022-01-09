@@ -74,7 +74,7 @@
             <footer class="footer-h"> 
                 <div>
                     <a href="https://github.com/LebedevIurii/zwa" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-alt fa-2x"></i></a>
-                    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fas fa-question-circle fa-2x"></i></a>
+                    <a href="dokumentace/dokumentace_lebediur.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-question-circle fa-2x"></i></a>
                 </div>
             </footer>
         </div>

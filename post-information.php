@@ -32,7 +32,8 @@
             echo '<div class="contact">';
             echo '<div class="name">';
             echo '<span class="manual">Kontakt: </span>';
-            echo '<a href="mailto:'.$post['userId'].'?subject='.$post['title'].'">'.$post['userId'].'</a>';
+            $mail = str_replace(' ', '_', $post['title']);
+            echo '<a href="mailto:'.$post['userId'].'?subject='.$mail.'">'.$post['userId'].'</a>';
             echo '</div>';
             echo '</div>';
             echo '</div>';
