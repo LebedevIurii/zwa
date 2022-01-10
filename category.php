@@ -16,6 +16,7 @@
     <div class="main-container">
         <div class="header">
             <nav class="nav">
+                <!-- Navigation bar -->
                 <a href="index.php">
                     <div class="logo">
                         <h1>Meow-itel</h1>
@@ -24,6 +25,7 @@
                 <div>
                     <ul class="nav-links">
                         <?php
+                            /** Check if user authorized to allow him adding posts */
                             if (isset($_SESSION["is_authorized"]) && ($_SESSION["is_authorized"] == 1)){
                                 echo '<li class="add">';
                                 echo '<a href="add.php">Add Post</a>';
@@ -34,6 +36,7 @@
                             <a href="index.php">Home</a>
                         </li>
                         <?php
+                            /** Check if user authorized to show his profile */
                             echo "<li>";
                             if (isset($_SESSION["is_authorized"]) && $_SESSION["is_authorized"] == 1){
                                 echo "<a href='profile.php'>Profile</a>";
@@ -51,21 +54,27 @@
         </div>
         <div class="content">
             <div class="main">
+                <!-- Category navigation -->
                 <div class="category-menu">
+                    <!-- Category navigation -->
                     <ul class="category-links">
                         <?php 
+                            /** Request for active categories */
                             include 'categorymenu.php'
                         ?>
                     </ul>
                 </div>
+                <!-- Latest posts filtered by category tag  -->
                 <div class="post-block">
                     <?php 
+                        /** Request for this posts in the database */
                         include 'postblock.php';
                     ?>
                 </div>
             </div>   
         </div>
         <div class="footer">
+            <!-- Footer -->
             <footer class="footer-h"> 
                 <div>
                     <a href="https://github.com/LebedevIurii/zwa" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-alt fa-2x"></i></a>

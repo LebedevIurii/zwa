@@ -16,6 +16,7 @@
 <body>
     <div class="main-container">
         <div class="header">
+            <!--Nav bar-->
             <nav class="nav">
                 <a href="index.php">
                     <div class="logo">
@@ -33,6 +34,7 @@
         </div>
         <div class="profile-content">
             <div class="profile-field">
+               <!--Registration Form-->
                <div class="title-text">
                     <div class="title signup">
                        Signup Form
@@ -59,6 +61,7 @@
                               <input id="confirm-password" name="confirm-password" onchange="compare()" type="password" placeholder="Podtvrdit heslo" pattern="[A-Za-z0-9@.]{8,}" required>
                             </div>
                             <?php
+                                /** Validation errors */
                                 foreach($err AS $error){
                                     print $error."<br>";
                                 }                                
@@ -68,6 +71,7 @@
                                 
                                 <input name="submit" type="submit" value="Signup">
                             </div>
+                            <!--Link to login form-->
                             <div>
                                 Máte již učet? <a href="login.php">Přihlásit se teď</a>
                             </div>

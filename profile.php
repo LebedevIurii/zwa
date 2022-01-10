@@ -14,6 +14,7 @@
 <body>
     <div class="main-container">
         <div class="header">
+            <!--Nav bar-->
             <nav class="nav">
                 <a href="index.php">
                     <div class="logo">
@@ -31,6 +32,7 @@
         </div>
         <div class="profile-content">
             <div class="user-field">
+                <!-- Profile field -->
                 <div class="title profile">
                     Uživatelcký profil
                 </div>
@@ -39,7 +41,7 @@
                 </div>
                 <div class="profile-info">
                     <?php
-                    include 'profile-information.php'
+                        include 'profile-information.php'
                     ?>
                 </div>
             </div>

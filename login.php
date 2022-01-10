@@ -16,6 +16,7 @@
     <div class="main-container">
         <div class="header">
             <nav class="nav">
+                <!--Nav bar-->
                 <a href="index.php">
                   <div class="logo">
                       <h1>Meow-itel</h1>
@@ -31,6 +32,7 @@
             </nav>
         </div>
         <div class="profile-content">
+            <!--Login Form-->
             <div class="profile-field">
                <div class="title-text">
                     <div class="title login">
@@ -49,6 +51,7 @@
                                <input id="password" name="password" type="password" placeholder="Heslo" pattern="[A-Za-z0-9]{8,}" required>
                             </div>
                             <?php
+                                /** Validation errors */
                                 if($error != null){
                                     echo "<span>$error</span></br>";
                                 }
@@ -58,6 +61,7 @@
                                <div class="btn-layer"></div>
                                <input name="submit" id="submit" type="submit" value="Login">
                             </div>
+                            <!--Link to signup form-->
                             <div>
                                Ještě nemáte účet? <a href="signup.php">Zaregestrujte se teď</a>
                             </div>

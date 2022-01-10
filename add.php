@@ -17,6 +17,7 @@
         <div class="main-container">
             <div class="header">
                 <div class="nav">
+                    <!-- Navigation bar -->
                     <a href="index.php">
                         <div class="logo">
                             <h1>Meow-itel</h1>
@@ -28,6 +29,7 @@
                                 <a href="index.php">Home</a>
                             </li>
                             <?php
+                                /** Check if user authorized to show his profile */
                                 echo "<li>";
                                 if (isset($_SESSION["is_authorized"]) && $_SESSION["is_authorized"] == 1){
                                     echo "<a href='profile.php'>Profile</a>";
@@ -45,6 +47,7 @@
             </div>
             <div class="content">
                 <div class="main">
+                    <!-- Adding post form -->
                     <div class="add-post-field">
                         <div class="form-inner">
                             <form action="add.php" class="ad" method="post" enctype="multipart/form-data">
@@ -96,6 +99,7 @@
                 </div>
             </div>
             <div class="footer">
+                <!-- Footer -->
                 <footer class="footer-h"> 
                     <div>
                         <a href="https://github.com/LebedevIurii/zwa" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-alt fa-2x"></i></a>

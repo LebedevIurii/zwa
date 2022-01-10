@@ -1,11 +1,15 @@
 <?php
+    /** Connect to database */
     $db = mysqli_connect('remotemysql.com', 'XEgCxHe4mC', 'ON0JjIMn1k', 'XEgCxHe4mC');
     $url = parse_url("{$_SERVER['REQUEST_URI']}", PHP_URL_QUERY);
     parse_str($url, $arguments);
     $post_id = $arguments["post_id"];
+    /** Check if post_id is fetched */
     if (isset($post_id)){
         $found_post = mysqli_query($db, "SELECT * FROM `Posts` WHERE `id`='$post_id'");
+        /** Check if post exist */
         if (isset($found_post)){
+            /** Post field */
             $post = mysqli_fetch_array($found_post);
             echo '<div class="post-field">';
             echo '<div class="post-field-item">';
@@ -47,6 +51,7 @@
             echo '</div>';
         }
     } else{
+        /** If there is no post with this id, rederect to main page */
         echo '<meta http-equiv="refresh" content="0; URL= /~lebediur/index.php">';
         exit();
     }
