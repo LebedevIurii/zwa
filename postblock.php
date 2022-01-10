@@ -2,6 +2,7 @@
     $db = mysqli_connect('remotemysql.com', 'XEgCxHe4mC', 'ON0JjIMn1k', 'XEgCxHe4mC');
     $url = parse_url("{$_SERVER['REQUEST_URI']}", PHP_URL_QUERY);
     parse_str($url, $arguments);
+    /** Fetching category and page from url */
     $category_id = $arguments["id"];
     $page = $arguments["page"];
     if (!(isset($category_id))) {
@@ -17,45 +18,46 @@
         echo '<div class="block-name">'.$post_category["name"].'</div>';
         echo '</div>';
         echo '<div class="items">';
+        /** Fetching latest filtered posts */
         $query = "SELECT * FROM `Posts` WHERE `category`= '$post_tag' ORDER BY `id` DESC LIMIT $start_from, $per_page_record";
         $posts_result = mysqli_query($db, $query);
         $number = $start_from;
         while ($post_array = mysqli_fetch_array($posts_result)){
             echo "<div class='post'>";
             echo "<div class='img'>";
-            // Using an image by Post
+            /** Using an image by Post */
             echo "<a href='post.php?post_id=".$post_array['id']."' class='linked-post'><img src=".$post_array['image']." alt='Photo'></a>";
             echo "</div>";
             echo "<span class='title-price'>";
-            // Using post's title
+            /** Using post's title */
             echo "<span>".$post_array['title']."</span>";
             echo "<span class='price'>";
             echo "<span>Price:</span>";
-            // Using post's price
+            /** Using post's price */
             echo "<span>".$post_array['price'].",- Kč</span>";
             echo "</span>";
             echo "</span>";
             echo "<div class='post-text'>";
-            // Using post's discryption
+            /** Using post's discryption */
             echo "<p>".$post_array['text']."</p>";
             echo "</div>";
             echo "</div>";
 
         }
         echo '</div>';
+        /** Pagination */
         $rs_result = mysqli_query($db,"SELECT * FROM `Posts` WHERE `category`= '$post_tag'");     
         $posts_pages = mysqli_fetch_all($rs_result);
         $total_records = count($posts_pages);
         $total_pages = ceil($total_records / $per_page_record);
         $pagLink = null;
-    
+        /** Control previous page button */
         if($total_pages > 1) {
             echo '<div class="paging">';
             if($page >= 2){   
-                
                 echo "<a href='category.php?id=".$category_id."&page=".($page - 1)."'> < Prev </a>";   
             }       
-            
+            /** Making page's buttons */ 
             for ($i=1; $i <= $total_pages; $i++) {
                 if ($page == $i){
                     echo "<span class='current-page'>"."$i"."</span>";
@@ -63,7 +65,7 @@
                 echo "<a href='category.php?id=".$category_id."&page=".$i."'> ".$i." </a>";     
                 }
             }  
-            
+            /** Control next page button */ 
             if($page < $total_pages){   
                 echo "<a href='category.php?id=".$category_id."&page=".($page + 1)."'>  Next > </a>";   
             }

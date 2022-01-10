@@ -1,4 +1,5 @@
 <?php
+    /** Log out by assigning default values to user attributes */
     include 'connectioncheck.php';
     $_SESSION['is_authorized']= 0;
     $_SESSION['user_name']="";
