@@ -53,11 +53,11 @@
                               <input id="name" name="login" type="text" placeholder="Jmeno" maxlength="32" pattern="[A-Za-z]{1,32}" value="<?php echo $login; ?>" required>
                             </div>
                             <div class="field">
-                              <label for="signup-password">Heslo*</label>
+                              <label for="signup-password">Heslo* (musí mit 8 znaku)</label>
                               <input id="signup-password" name="password"  type="password" placeholder="Heslo" pattern="[A-Za-z0-9@.]{8,}" required>
                             </div>
                             <div class="field">
-                              <label for="confirm-password">Podtvrdit heslo*</label>
+                              <label for="confirm-password">Podtvrdit heslo* (musí mit 8 znaku)</label>
                               <input id="confirm-password" name="confirm-password" onchange="compare()" type="password" placeholder="Podtvrdit heslo" pattern="[A-Za-z0-9@.]{8,}" required>
                             </div>
                             <?php

@@ -5,12 +5,18 @@
     /** Waiting clicking on submit buttons */
     if (isset($_POST['submit'])) {
         $login = htmlspecialchars($_POST['login']);
-        $password = password_hash(htmlspecialchars(trim($_POST['password'])), PASSWORD_DEFAULT);
+        $password = htmlspecialchars(trim($_POST['password']));
+        $confirm_password = htmlspecialchars(trim($_POST['confirm-password']));
+        $salted_password = password_hash($password, PASSWORD_DEFAULT);
         $email = htmlspecialchars($_POST['email']);
         /** Validation check */
         if(!preg_match("/^[a-zA-Z0-9]+$/",$login))
         {
             $err[] = "Jmeno musí se skladat jen z abcedy a čisel";
+        }
+        if(!preg_match("/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/",$email))
+        {
+            $err[] = "E-mail musí byt validní, např: username@gmail.com";
         }
         if(strlen($login) < 3 or strlen($login) > 30)
         {
@@ -22,16 +28,27 @@
         {
             $err[] = "Takový úživatel již exzistuje";
         }
+
+        $query = mysqli_query($db, "SELECT * FROM Users WHERE `email`='".mysqli_real_escape_string($db, $email)."'");
+        if(mysqli_num_rows($query) != null)
+        {
+            $err[] = "Takový email již obsazen";
+        }
         /** Password validation check */
         if(strlen($password) < 8)
         {
             $err[] = "Heslo musi obsahovat alespon 8 znaku";
         }
+        /** Password confirm */
+        if ($password != $confirm_password)
+        {
+            $err[] = "Hesla se liší";
+        }
         /** Checking if there is no errors */
         if(count($err) == 0)
         {
             /** Adding new user in database */
-            $db -> query("INSERT INTO `Users` (`login`, `password`, `email`) VALUES('$login', '$password', '$email')");
+            $db -> query("INSERT INTO `Users` (`login`, `password`, `email`) VALUES('$login', '$salted_password', '$email')");
             $db -> close();
             $_SESSION["user_name"] = $email;
             $_SESSION["is_authorized"] = 1;
