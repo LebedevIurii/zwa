@@ -63,7 +63,7 @@
                             </div>
                             <!--Link to signup form-->
                             <div>
-                               Ještě nemáte účet? <a href="signup.php">Zaregestrujte se teď</a>
+                               Ještě nemáte účet? <a href="signup.php">Zaregistrujte se teď</a>
                             </div>
                        </form>
                     </div>
